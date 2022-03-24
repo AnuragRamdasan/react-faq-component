@@ -178,20 +178,20 @@ export default class rowItem extends PureComponent {
         const contentTextClasses = [style["row-content-text"], "row-content-text"].join(" ");
         const rowItem =
             content && typeof content === "string" ? (
-                <div className={contentTextClasses} dangerouslySetInnerHTML={{ __html: content }} />
+                <p className={contentTextClasses} dangerouslySetInnerHTML={{ __html: content }} />
             ) : (
-                <div className={contentTextClasses}>{content}</div>
+                <p className={contentTextClasses}>{content}</p>
             );
 
         return (
             <section className={`faq-row ${style["faq-row"]}`} role="listitem" ref={rowRef}>
                 <div className={className} {...attrs}>
-                    <div
+                    <h2
                         className={`row-title-text ${style["row-title-text"]}`}
                         id={`react-faq-rowtitle-${this.props.rowid}`}
                     >
                         {title}
-                    </div>
+                    </h2>
                     <span className={`icon-wrapper ${style["icon-wrapper"]}`} aria-hidden="true">
                         {icon}
                     </span>
